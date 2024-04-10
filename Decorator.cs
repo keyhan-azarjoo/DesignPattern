@@ -101,3 +101,13 @@ public class PizzaShop
         Console.WriteLine(onionAddOn.GetDescription() + ": " + onionAddOn.Cost());
     }
 }
+
+
+
+//In the Decorator Pattern, we have a base class (or interface) that defines the common interface and basic functionality. Then we have one or more decorator classes that wrap around this base class, adding additional functionality while maintaining compatibility with the base class's interface. These decorators can be stacked on top of each other to add multiple layers of functionality.
+//In the code:
+//Dough is the base class defining the basic functionality of pizza dough.
+//GarlicSauce and SpicyRedSauce are concrete implementations of Dough.
+//AddOn is the abstract decorator class extending Dough, providing a way to add additional toppings to the pizza.
+//Mushroom and Onion are concrete decorator classes extending AddOn, adding mushroom and onion toppings, respectively, to the pizza.
+//This pattern allows for dynamic behavior modification at runtime by attaching new behavior to objects without changing their classes. It promotes code reuse and flexibility, allowing you to add or remove functionalities dynamically.
