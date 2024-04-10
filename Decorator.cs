@@ -1,97 +1,103 @@
-// Implementing Decorator Design Pattern
+using System;
 
-public abstract class Dough {
-	private String description;
-    
-	public Dough(String description) {
-		super();
-		this.description = description;
-	}
-    
-	public String getDescription() {
-		return description;
-	}
-    
-	public abstract double cost();
+public abstract class Dough
+{
+    private string description;
+
+    public Dough(string description)
+    {
+        this.description = description;
+    }
+
+    public string GetDescription()
+    {
+        return description;
+    }
+
+    public abstract double Cost();
 }
 
+public class GarlicSauce : Dough
+{
+    public GarlicSauce() : base("Garlic Sauce")
+    {
+    }
 
-public class GarlicSauce : Dough {
-	public GarlicSauce() {
-		super(“Garlic Sauce”);
-	}
-
-	@Override
-	public double cost() {
-		return 10;
-	}
-}
-public class SpicyRedSauce : Dough {
-	public SpicyRedSauce() {
-		super(“Spicy Red Sauce”);
-	}
-
-	@Override
-	public double cost() {
-		return 12;
-	}
+    public override double Cost()
+    {
+        return 10;
+    }
 }
 
-public abstract class AddOn : Dough {
-	protected Dough dough;
+public class SpicyRedSauce : Dough
+{
+    public SpicyRedSauce() : base("Spicy Red Sauce")
+    {
+    }
 
-	public AddOn(String description, Dough dou) {
-		super(description);
-		this.dough = dou;
-	}
-
-	public abstract String getDescription();
+    public override double Cost()
+    {
+        return 12;
+    }
 }
 
+public abstract class AddOn : Dough
+{
+    protected Dough dough;
 
+    public AddOn(string description, Dough dough) : base(description)
+    {
+        this.dough = dough;
+    }
 
-
-public class Mushroom : AddOn {
-	public Mushroom(Dough dou) {
-		super(“Mushroom”, dou);
-	}
-
-	@Override
-	public String getDescription() {
-		return dough.getDescription() + “ with Mushroom”;
-	}
-
-	@Override
-	public double cost() {
-		return dough.cost() + 2;
-	}
+    public abstract new string GetDescription();
 }
 
-public class Onion : AddOn {
-	public Onion(Dough dou) {
-		super(“Onion”, dou);
-	}
+public class Mushroom : AddOn
+{
+    public Mushroom(Dough dough) : base("Mushroom", dough)
+    {
+    }
 
-	@Override
-	public String getDescription() {
-		return dough.getDescription() + “ with Onion”;
-	}
+    public override string GetDescription()
+    {
+        return dough.GetDescription() + " with Mushroom";
+    }
 
-	@Override  public double cost() {
-		return dough.cost() + 0.5;
-	}
+    public override double Cost()
+    {
+        return dough.Cost() + 2;
+    }
 }
 
+public class Onion : AddOn
+{
+    public Onion(Dough dough) : base("Onion", dough)
+    {
+    }
 
-public class PizzShop {
-	public static void main(String[] args) {
-		GarlicSauce garlicSauce = new GarlicSauce();
-		System.out.println(garlicSauce.getDescription() + “: “ + garlicSauce.cost());
+    public override string GetDescription()
+    {
+        return dough.GetDescription() + " with Onion";
+    }
 
-		Mushroom mushroomAddOn = new Mushroom(garlicSauce);
-		System.out.println(mushroomAddOn.getDescription() + “: “ + mushroomAddOn.cost());
+    public override double Cost()
+    {
+        return dough.Cost() + 0.5;
+    }
+}
 
-		Onion onionAddOn = new Onion(mushroomAddOn);
-		System.out.println(onionAddOn.getDescription() + “: “ + onionAddOn.cost());
-	}
+public class PizzaShop
+{
+    public static void Main(string[] args)
+    {
+        GarlicSauce garlicSauce = new GarlicSauce();
+        Console.WriteLine(garlicSauce.GetDescription() + ": " + garlicSauce.Cost());
+
+        Mushroom mushroomAddOn = new Mushroom(garlicSauce);
+        Console.WriteLine(mushroomAddOn.GetDescription() + ": " + mushroomAddOn.Cost());
+
+        Onion onionAddOn = new Onion(mushroomAddOn);
+        Console.WriteLine(onionAddOn.GetDescription() + ": " + onionAddOn.Cost());
+    }
 }
