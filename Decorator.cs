@@ -1,4 +1,4 @@
-// Decorator Strategy
+// Implementing Decorator Design Pattern
 
 public abstract class Dough {
 	private String description;
