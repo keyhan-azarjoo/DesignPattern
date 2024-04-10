@@ -1,4 +1,5 @@
-// 
+// Implementing a Strategy Design Pattern
+
 
 using System;
 
