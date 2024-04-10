@@ -5,7 +5,7 @@ In software development, programmers often encounter recurring problems, and des
 # Types of Design Patterns:
 There are three primary types of design patterns:
 
-# Creational Patterns: 
+# Creational Patterns:
 These patterns assist in the instantiation of classes or objects based on specific patterns or conditions.
 
 # Structural Patterns: 
