@@ -25,15 +25,15 @@ let's take a look at some useful patterns:
 	link
 
 # Decorator(Structural):
-	in any software design, we don't use data as it is in the database, we manipulate it and change the data in a way we want. 
-	sometimes we need to define different scenarios and combine different data to return what we need. in this situation, we can use a structural design pattern to cover all scenarios structurally.
-	imagine we have a pizza shop and we want to manage the price of pizzas based on their topping. we sell 60 different pizzas 
-	we have 2 different daughs, 3 different base sauces, and 10 different toppings. to implement these pizzas we need 2*3*10 = 60 different classes to cover all pizzas and imagine one day we need to add another base sauce or change a topping price. in that case, we need to recreate or change all classes.
-	what is the solution?? a decorator design pattern.
-	by using a decorator pattern we don't need to implement all 60 classes and we create just one class for each of them meaning 2 + 3 + 10 = 15 classes and they are inherited or composite from each other.
-	we will create 2 classes for dough and 3 classes for base sauces. base sauces inherited from the dough class and topping inherited from the base sauce class.
-	a simple implementation can be seen in the third picture or this git repository:
-	link
+in any software design, we don't use data as it is in the database, we manipulate it and change the data in a way we want. 
+sometimes we need to define different scenarios and combine different data to return what we need. in this situation, we can use a structural design pattern to cover all scenarios structurally.
+imagine we have a pizza shop and we want to manage the price of pizzas based on their topping. we sell 60 different pizzas 
+we have 2 different daughs, 3 different base sauces, and 10 different toppings. to implement these pizzas we need 2*3*10 = 60 different classes to cover all pizzas and imagine one day we need to add another base sauce or change a topping price. in that case, we need to recreate or change all classes.
+what is the solution?? a decorator design pattern.
+by using a decorator pattern we don't need to implement all 60 classes and we create just one class for each of them meaning 2 + 3 + 10 = 15 classes and they are inherited or composite from each other.
+we will create 2 classes for dough and 3 classes for base sauces. base sauces inherited from the dough class and topping inherited from the base sauce class.
+a simple implementation can be seen in the third picture or this git repository:
+link
 	
 # Strategy(Behavioral):
 	it works by separating the behavior of an object from the object itself. meaning that a common interface is used to behave as father and other objects inherit from this class. then we capsulate child objects and delegate them to a class to define the behavior based on the parameters (objects) passed to it.
