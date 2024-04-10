@@ -1,4 +1,4 @@
-// Implimenting Singleton Design Pattern
+// Implementing Singleton Design Pattern
 
 using System;
 
